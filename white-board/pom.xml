@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 
+    xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="
+        http://maven.apache.org/POM/4.0.0 
+        http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.simple</groupId>
+        <artifactId>examples</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>white-board</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>${project.name}</name>
+    
+    <properties>
+        <project.name>White Board</project.name>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven-compiler-plugin>3.2</maven-compiler-plugin>
+        <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
+        <maven-surefire-plugin.version>2.18</maven-surefire-plugin.version>
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.10.8</mockito.version>
+        <slf4j.version>1.7.7</slf4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>white-board-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+            
+    <modules>
+        <module>white-board-api</module>
+        <module>white-board-core</module>
+        <module>white-board-english</module>
+        <module>white-board-french</module>
+        <module>white-board-italian</module>
+        <module>white-board-webservices</module>
+    </modules>
+</project>

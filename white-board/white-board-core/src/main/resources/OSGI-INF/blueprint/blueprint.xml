@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint 
+    xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.osgi.org/xmlns/blueprint/v1.0.0 
+        http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+    
+    <bean 
+        id="greetingService"
+        class="org.jsimple.white.board.core.impl.DefaultGreetingService"/>
+
+    <reference-list  
+        id="providers"
+        interface="org.jsimple.white.board.api.GreetingProvider"
+        availability="optional">
+        <reference-listener  
+            ref="greetingService" 
+            bind-method="register" 
+            unbind-method="unregister"/>
+    </reference-list>
+    
+    <service 
+        id="exposedGreetingService"
+        ref="greetingService"
+        interface="org.jsimple.white.board.api.GreetingService"/>
+            
+</blueprint>

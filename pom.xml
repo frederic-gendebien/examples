@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 
+    xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="
+        http://maven.apache.org/POM/4.0.0 
+        http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>org.simple</groupId>
+    <artifactId>examples</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>${project.name}</name>
+    
+    <properties>
+        <project.name>Examples</project.name>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven-compiler-plugin>3.2</maven-compiler-plugin>
+        <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
+        <maven-surefire-plugin.version>2.18</maven-surefire-plugin.version>
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.10.8</mockito.version>
+        <slf4j.version>1.7.7</slf4j.version>
+    </properties>
+
+    <modules>
+        <module>white-board</module>
+    </modules>
+</project>

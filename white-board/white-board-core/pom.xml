@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 
+    xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="
+        http://maven.apache.org/POM/4.0.0 
+        http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <artifactId>white-board</artifactId>
+        <groupId>org.simple</groupId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.simple</groupId>
+    <artifactId>white-board-core</artifactId>
+    <packaging>bundle</packaging>
+
+    <name>${project.name} :: Core</name>
+
+    <properties>
+        <guava.version>18.0</guava.version>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>white-board-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${maven-bundle-plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration/>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
